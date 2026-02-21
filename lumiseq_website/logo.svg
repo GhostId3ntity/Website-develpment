@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="140 370 750 300" preserveAspectRatio="xMidYMid meet">
+<defs>
+    <filter id="emblemShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="50"/>
+        <feOffset dx="0" dy="0" result="offsetblur"/>
+        <feFlood flood-color="black" flood-opacity="0.8"/>
+        <feComposite in2="offsetblur" operator="in"/>
+        <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+    <linearGradient id="blueRayGradient" x1="2640" y1="5382" x2="2900" y2="5800" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="greenRayGradient" x1="2640" y1="4882" x2="2380" y2="4464" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#F8FAFC" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    </linearGradient>
+</defs>
+<g transform="translate(0, 1024) scale(0.1, -0.1)" stroke="none">
+    <!-- Center Star / Diamond -->
+    <path fill="#F8FAFC" d="M2640 4882 L 2890 5132 L 2640 5382 L 2390 5132 Z" />
+    
+    <!-- Symmetric Light Rays Projection -->
+    <path fill="url(#blueRayGradient)" d="M2640 5382 L 2890 5132 L 3100 5800 L 2640 5865 Z" />
+    <path fill="url(#greenRayGradient)" d="M2640 4882 L 2390 5132 L 2180 4464 L 2640 4399 Z" />
+
+    <!-- Emblem Components -->
+    <g filter="url(#emblemShadow)">
+        <path fill="#38BDF8" d="M2640 5964 l0 -99 340 -195 340 -195 0 -360 0 -360 -137 -78 c-75 -42 -137 -76 -139 -74 -2 2 -4 86 -4 188 -1 102 -5 190 -8 196 -4 6 -38 29 -76 50 l-69 39 -76 -14 c-88 -17 -101 -25 -101 -61 0 -22 12 -32 80 -69 l80 -43 0 -289 c0 -160 3 -290 8 -290 4 0 142 79 307 174 l300 173 3 456 2 456 -22 14 c-13 8 -194 112 -403 232 -209 120 -390 225 -402 233 l-23 14 0 -98z"/>
+        <path fill="#10B981" d="M2103 5748 l-303 -181 0 -452 0 -453 420 -241 c231 -133 422 -241 425 -241 3 0 5 42 5 93 l0 94 -257 148 c-142 82 -294 169 -338 195 l-80 47 0 358 0 359 133 79 c74 43 135 77 137 75 3 -2 5 -90 5 -196 l1 -191 80 -46 80 -46 82 18 82 19 3 35 c3 34 1 35 -78 78 l-80 42 0 295 c0 162 -3 294 -7 293 -5 -1 -144 -82 -310 -181z"/>
+    </g>
+
+    <!-- Logo Typography -->
+    <path fill="#F8FAFC" d="M6637 5402 c-125 -45 -187 -160 -143 -266 25 -60 79 -90 226 -126 107 -27 132 -42 128 -78 -7 -61 -160 -64 -274 -7 l-46 23 -14 -34 c-8 -19 -21 -50 -29 -70 l-15 -35 44 -19 c132 -59 293 -64 394 -13 79 39 115 88 120 162 8 105 -39 155 -183 195 -50 13 -102 27 -116 30 -15 3 -37 14 -50 25 -20 16 -22 22 -12 44 17 37 71 49 152 36 35 -5 80 -16 99 -25 19 -8 36 -13 37 -12 1 2 12 32 25 67 22 61 23 64 6 77 -56 41 -264 56 -349 26z"/>
+    <path fill="#F8FAFC" d="M7953 5402 c-147 -52 -227 -163 -227 -317 0 -97 29 -170 94 -235 44 -44 149 -100 187 -100 13 0 43 -20 73 -49 111 -108 244 -127 350 -50 l41 30 -20 27 c-11 15 -29 38 -39 50 l-18 24 -35 -21 c-39 -24 -101 -28 -118 -7 -9 11 -5 16 19 26 46 19 115 90 147 151 25 48 28 64 28 149 0 84 -3 102 -28 152 -33 68 -90 121 -166 157 -75 34 -210 41 -288 13z m217 -157 c71 -37 107 -147 76 -230 -19 -48 -72 -101 -112 -111 -43 -11 -120 2 -153 25 -45 32 -71 89 -71 154 0 145 133 228 260 162z"/>
+    <path fill="#F8FAFC" d="M3972 5083 l3 -328 248 -3 247 -2 0 75 0 75 -160 0 -160 0 0 255 0 255 -90 0 -90 0 2 -327z"/>
+    <path fill="#F8FAFC" d="M4539 5406 c-2 -2 -2 -109 1 -238 5 -217 7 -236 27 -275 57 -106 169 -161 303 -150 126 11 206 62 252 162 21 47 23 65 26 278 l3 227 -90 0 -90 0 -3 -217 c-3 -209 -4 -219 -26 -250 -47 -66 -147 -65 -196 0 -20 27 -21 43 -24 248 l-3 219 -88 0 c-48 0 -90 -2 -92 -4z"/>
+    <path fill="#F8FAFC" d="M5290 5081 l0 -329 80 2 80 1 1 145 c1 80 1 156 0 170 l-2 25 18 -22 c10 -12 47 -74 83 -137 l65 -115 45 -1 45 0 70 126 c39 70 75 134 82 143 10 13 12 -20 13 -162 l0 -178 83 3 82 3 0 325 0 325 -80 3 -80 2 -21 -37 c-98 -178 -188 -333 -193 -333 -3 0 -46 71 -95 158 -49 86 -96 169 -105 185 -15 26 -19 27 -93 27 l-78 0 0 -329z"/>
+    <path fill="#F8FAFC" d="M6192 5084 l3 -326 85 -1 85 -1 3 327 2 327 -90 0 -90 0 2 -326z"/>
+    <path fill="#F8FAFC" d="M7127 5403 c-3 -5 -2 -153 1 -330 l5 -322 261 2 261 2 0 70 0 70 -172 3 -173 2 0 61 c0 41 3 58 11 53 6 -3 71 -3 145 1 l134 7 0 64 0 64 -144 0 -144 0 -4 54 -3 54 44 6 c24 3 99 6 167 6 l124 0 0 70 0 70 -254 0 c-140 0 -257 -3 -259 -7z"/>
+</g>
+</svg>

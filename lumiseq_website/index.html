@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumiseq | Strategic Cybersecurity Consulting</title>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.svg" alt="Lumiseq" style="height: 64px; width: auto;">
+            </a>
+            <ul class="nav-links flex">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <canvas id="sequence-canvas"></canvas>
+                <div style="max-width: 850px; margin: 0 auto; text-align: center;">
+                    <div class="hero-tagline reveal">Authority + Clarity + Conversion</div>
+                    <h1 style="font-size: clamp(3rem, 10vw, 5.5rem); margin-bottom: 2rem;" class="reveal">
+                        Illuminating Security. <span class="text-gradient">Strengthening Sequences.</span>
+                    </h1>
+                    <p style="font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--text-muted); margin-bottom: 3.5rem; line-height: 1.6; max-width: 700px; margin-left: auto; margin-right: auto;"
+                        class="reveal">
+                        Enterprise cybersecurity consulting across compliance, cloud security, and risk intelligence.
+                    </p>
+                    <div style="display: flex; gap: 1.5rem; justify-content: center;" class="hero-btns reveal">
+                        <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+                        <a href="services.html" class="btn btn-secondary">Explore Services</a>
+                    </div>
+                </div>
+
+                <!-- Sequence Diagram Animation from Design -->
+                <div id="hero-animation"
+                    style="margin-top: 6rem; width: 100%; max-width: 1000px; margin-left: auto; margin-right: auto; height: 250px; display: flex; align-items: center; justify-content: center; position: relative;"
+                    class="reveal">
+                    <svg width="100%" height="100%" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
+                        <path id="master-path" d="M 150 100 L 400 100 L 650 100 L 900 100"
+                            stroke="rgba(255,255,255,0.05)" stroke-width="2" fill="none" />
+                        <path id="active-path" d="M 150 100 L 400 100 L 650 100 L 900 100" stroke="var(--action-blue)"
+                            stroke-width="3" fill="none" stroke-dasharray="1000" stroke-dashoffset="1000" />
+
+                        <g class="node" id="node-1" transform="translate(150, 100)">
+                            <circle class="ring" r="18" fill="none" stroke="rgba(59, 130, 246, 0.2)" stroke-width="1" />
+                            <circle class="core" r="8" fill="var(--bg-primary)" stroke="var(--action-blue)"
+                                stroke-width="2" />
+                            <circle class="pulse" r="8" fill="var(--action-blue)" opacity="0" />
+                            <text y="45" text-anchor="middle" fill="var(--text-muted)" font-size="13"
+                                font-weight="500">Compliance</text>
+                        </g>
+
+                        <g class="node" id="node-2" transform="translate(400, 100)">
+                            <circle class="ring" r="18" fill="none" stroke="rgba(59, 130, 246, 0.2)" stroke-width="1" />
+                            <circle class="core" r="8" fill="var(--bg-primary)" stroke="var(--action-blue)"
+                                stroke-width="2" />
+                            <circle class="pulse" r="8" fill="var(--action-blue)" opacity="0" />
+                            <text y="45" text-anchor="middle" fill="var(--text-muted)" font-size="13"
+                                font-weight="500">Cloud Security</text>
+                        </g>
+
+                        <g class="node" id="node-3" transform="translate(650, 100)">
+                            <circle class="ring" r="18" fill="none" stroke="rgba(59, 130, 246, 0.2)" stroke-width="1" />
+                            <circle class="core" r="8" fill="var(--bg-primary)" stroke="var(--action-blue)"
+                                stroke-width="2" />
+                            <circle class="pulse" r="8" fill="var(--action-blue)" opacity="0" />
+                            <text y="45" text-anchor="middle" fill="var(--text-muted)" font-size="13"
+                                font-weight="500">Intelligence</text>
+                        </g>
+
+                        <g class="node" id="node-4" transform="translate(900, 100)">
+                            <circle class="ring" r="18" fill="none" stroke="rgba(34, 211, 238, 0.2)" stroke-width="1" />
+                            <circle class="core" r="8" fill="var(--bg-primary)" stroke="var(--success)"
+                                stroke-width="2" />
+                            <circle class="pulse" r="8" fill="var(--success)" opacity="0" />
+                            <text y="45" text-anchor="middle" fill="var(--text-muted)" font-size="13"
+                                font-weight="500">Resilience</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Lumiseq Does -->
+        <section id="problem" style="background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));">
+            <div class="container reveal">
+                <div style="margin-bottom: 5rem; text-align: center;">
+                    <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 2rem;">Strategic Security for
+                        <br><span class="text-gradient">Growing Enterprises.</span>
+                    </h2>
+                    <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+                        Lumiseq helps organizations design, implement, and strengthen cybersecurity frameworks across
+                        compliance, cloud environments, and third-party risk ecosystems.
+                    </p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card cap-card hover-lift">
+                        <div style="width: 40px; height: 1px; background: var(--action-blue); margin-bottom: 2rem;">
+                        </div>
+                        <h3 style="margin-bottom: 1.25rem;">Compliance & Governance</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Two-line
+                            description of framework implementation and audit readiness strategies.</p>
+                        <a href="services.html"
+                            style="color: var(--action-blue); font-weight: 600; font-size: 0.85rem;">LEARN MORE →</a>
+                    </div>
+                    <div class="card cap-card hover-lift">
+                        <div style="width: 40px; height: 1px; background: var(--action-blue); margin-bottom: 2rem;">
+                        </div>
+                        <h3 style="margin-bottom: 1.25rem;">Cloud Security Engineering</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Two-line
+                            description detailing infrastructure protection and posture management.</p>
+                        <a href="services.html"
+                            style="color: var(--action-blue); font-weight: 600; font-size: 0.85rem;">LEARN MORE →</a>
+                    </div>
+                    <div class="card cap-card hover-lift">
+                        <div style="width: 40px; height: 1px; background: var(--accent-indigo); margin-bottom: 2rem;">
+                        </div>
+                        <h3 style="margin-bottom: 1.25rem;">Risk & Threat Intelligence</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Two-line
+                            description covering preemptive risk analysis and threat models.</p>
+                        <a href="services.html"
+                            style="color: var(--action-blue); font-weight: 600; font-size: 0.85rem;">LEARN MORE →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities Grid -->
+        <section style="background: var(--bg-secondary);">
+            <div class="container reveal" style="padding: 5rem 0;">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem;">Core Expertise</h2>
+                <div class="grid grid-4" style="gap: var(--space-md);">
+                    <div class="cap-card" style="padding: var(--space-lg); text-align: center;">
+                        <h4 style="font-size: 1rem; color: var(--text-primary);">ISO 27001 Implementation</h4>
+                    </div>
+                    <div class="cap-card" style="padding: var(--space-lg); text-align: center;">
+                        <h4 style="font-size: 1rem; color: var(--text-primary);">SOC 2 Readiness</h4>
+                    </div>
+                    <div class="cap-card" style="padding: var(--space-lg); text-align: center;">
+                        <h4 style="font-size: 1rem; color: var(--text-primary);">ISO 42001 AI Governance</h4>
+                    </div>
+                    <div class="cap-card" style="padding: var(--space-lg); text-align: center;">
+                        <h4 style="font-size: 1rem; color: var(--text-primary);">AWS Security Assessments</h4>
+                    </div>
+                    <div class="cap-card" style="padding: var(--space-lg); text-align: center;">
+                        <h4 style="font-size: 1rem; color: var(--text-primary);">GCP Security Reviews</h4>
+                    </div>
+                    <div class="cap-card" style="padding: var(--space-lg); text-align: center;">
+                        <h4 style="font-size: 1rem; color: var(--text-primary);">Security Awareness Training</h4>
+                    </div>
+                    <div class="cap-card" style="padding: var(--space-lg); text-align: center;">
+                        <h4 style="font-size: 1rem; color: var(--text-primary);">Third-Party Risk Assessments</h4>
+                    </div>
+                    <div class="cap-card" style="padding: var(--space-lg); text-align: center;">
+                        <h4 style="font-size: 1rem; color: var(--text-primary);">Security Posture Reviews</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Method Section -->
+        <section id="method">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 5rem;" class="reveal">
+                    <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem;">Our Structured <span
+                            class="text-gradient">Approach.</span></h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Buyers trust methodology more
+                        than adjectives.</p>
+                </div>
+
+                <div class="method-timeline reveal" style="max-width: 800px; margin: 0 auto;">
+                    <!-- Phase 01 -->
+                    <div class="method-item" style="margin-bottom: var(--space-xxl);">
+                        <div style="display: flex; gap: 2rem;">
+                            <div style="flex: 0 0 100px; font-weight: 700; color: var(--action-blue);">01</div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Assess</h3>
+                                <p style="color: var(--text-muted); max-width: 500px;">Identify critical gaps across
+                                    your current infrastructure and compliance posture.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 02 -->
+                    <div class="method-item" style="margin-bottom: var(--space-xxl);">
+                        <div style="display: flex; gap: 2rem;">
+                            <div style="flex: 0 0 100px; font-weight: 700; color: var(--action-blue);">02</div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Design</h3>
+                                <p style="color: var(--text-muted); max-width: 500px;">Architect robust controls and
+                                    policies tailored to your operational reality.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 03 -->
+                    <div class="method-item" style="margin-bottom: var(--space-xxl);">
+                        <div style="display: flex; gap: 2rem;">
+                            <div style="flex: 0 0 100px; font-weight: 700; color: var(--action-blue);">03</div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Implement</h3>
+                                <p style="color: var(--text-muted); max-width: 500px;">Execute the remediation and
+                                    systematically embed security within your teams.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 04 -->
+                    <div class="method-item" style="margin-bottom: var(--space-xxl);">
+                        <div style="display: flex; gap: 2rem;">
+                            <div style="flex: 0 0 100px; font-weight: 700; color: var(--accent-indigo);">04</div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Strengthen</h3>
+                                <p style="color: var(--text-muted); max-width: 500px;">Validate the effectiveness of
+                                    controls through targeted reviews.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phase 05 -->
+                    <div class="method-item">
+                        <div style="display: flex; gap: 2rem;">
+                            <div style="flex: 0 0 100px; font-weight: 700; color: var(--success);">05</div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Monitor</h3>
+                                <p style="color: var(--text-muted); max-width: 500px;">Provide ongoing oversight and
+                                    intelligence to maintain resilience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights / Thinking Section -->
+        <section id="thinking" style="border-top: 1px solid var(--border-low); background: var(--bg-secondary);">
+            <div class="container reveal" style="padding: 5rem 0;">
+                <div style="text-align: center; margin-bottom: 5rem;">
+                    <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem;">Security Intelligence <br>from
+                        <span class="text-gradient">Lumiseq.</span>
+                    </h2>
+                    <p style="color: var(--text-muted);">Authority compounds over time through deep research.</p>
+                </div>
+                <div class="grid grid-3">
+                    <a href="insights.html" style="text-decoration: none; color: inherit;">
+                        <div class="cap-card">
+                            <h4 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.2rem;">ISO 42001
+                                and the Future of AI Governance</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">How enterprises can systematically
+                                manage the risks of deploying LLMs and models.</p>
+                            <div
+                                style="margin-top: 2rem; color: var(--action-blue); font-weight: 600; font-size: 0.85rem;">
+                                READ ARTICLE →</div>
+                        </div>
+                    </a>
+                    <a href="insights.html" style="text-decoration: none; color: inherit;">
+                        <div class="cap-card">
+                            <h4 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.2rem;">Cloud
+                                Misconfiguration Risks in 2026</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">The silent threat vectors in AWS and
+                                GCP that scanners fail to detect accurately.</p>
+                            <div
+                                style="margin-top: 2rem; color: var(--action-blue); font-weight: 600; font-size: 0.85rem;">
+                                READ ARTICLE →</div>
+                        </div>
+                    </a>
+                    <a href="insights.html" style="text-decoration: none; color: inherit;">
+                        <div class="cap-card">
+                            <h4 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.2rem;">SOC 2
+                                Readiness: Where Companies Fail</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">The top three control gaps that
+                                cause delays in audit report issuance.</p>
+                            <div
+                                style="margin-top: 2rem; color: var(--action-blue); font-weight: 600; font-size: 0.85rem;">
+                                READ ARTICLE →</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="book"
+            style="padding: 10rem 0; text-align: center; position: relative; overflow: hidden; background: var(--bg-primary);">
+            <div
+                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(2, 6, 23, 0) 70%); z-index: 0;">
+            </div>
+            <div class="container reveal" style="position: relative; z-index: 1;">
+                <h2 style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 2rem;">Build Resilience <br>Into <span
+                        class="text-gradient">Every Layer.</span></h2>
+                <a href="contact.html" class="btn btn-primary"
+                    style="padding: 1.2rem 4rem; font-size: 1.2rem; border-radius: 100px;">Schedule Your Security
+                    Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid grid">
+                <div>
+                    <div style="margin-bottom: var(--space-md);">
+                        <img src="logo.svg" alt="Lumiseq" style="height: 64px; width: auto;">
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 14px; max-width: 300px;">
+                        To illuminate risk, strengthen governance, and enable secure growth for modern enterprises.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="insights.html">Insights</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <a href="mailto:hello@lumiseq.com">hello@lumiseq.com</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom flex justify-between">
+                <p>&copy; 2026 Lumiseq. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+        integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+    <script src="motion.js"></script>
+</body>
+
+</html>
