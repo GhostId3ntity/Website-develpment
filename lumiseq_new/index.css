@@ -55,8 +55,10 @@ body.page-services {
     background: var(--bg-primary);
 }
 
-/* Premium page background mesh — used on Insights & Services */
-.page-bg-mesh {
+/* ── SERVICES: Diagonal Security-Scan Background ── */
+/* A subtle sweeping diagonal line grid with an animated scan highlight,
+   conveying precision, structure, and systematic protection. */
+.bg-services {
     position: fixed;
     top: 0;
     left: 0;
@@ -64,16 +66,64 @@ body.page-services {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    background-image:
-        linear-gradient(rgba(112, 224, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(112, 224, 0, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    overflow: hidden;
 }
 
-/* Subtle atmospheric depth overlay on mesh pages */
-.page-bg-depth {
+.bg-services::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(-45deg,
+            rgba(112, 224, 0, 0.025) 0px,
+            rgba(112, 224, 0, 0.025) 1px,
+            transparent 1px,
+            transparent 60px);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 20%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 20%, transparent 80%);
+}
+
+.bg-services::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -20%;
+    width: 60%;
+    height: 300%;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(112, 224, 0, 0.04) 40%,
+            rgba(112, 224, 0, 0.06) 50%,
+            rgba(112, 224, 0, 0.04) 60%,
+            transparent 100%);
+    transform: rotate(15deg);
+    animation: services-scan 12s ease-in-out infinite;
+}
+
+@keyframes services-scan {
+    0% {
+        transform: rotate(15deg) translateY(0%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(15deg) translateY(60%);
+        opacity: 0;
+    }
+}
+
+/* ── INSIGHTS: Aurora / Knowledge-Flow Background ── */
+/* Softly drifting radial gradients that pulse between lumi-green and seq-purple,
+   representing the intersection of intelligence, data, and analysis. */
+.bg-insights {
     position: fixed;
     top: 0;
     left: 0;
@@ -81,9 +131,74 @@ body.page-services {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    background:
-        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(112, 224, 0, 0.025) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 30% at 50% 100%, rgba(131, 56, 236, 0.015) 0%, transparent 60%);
+    overflow: hidden;
+}
+
+.bg-insights::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(ellipse at 40% 50%, rgba(112, 224, 0, 0.06) 0%, transparent 65%);
+    animation: insights-drift-a 18s ease-in-out infinite alternate;
+    filter: blur(60px);
+}
+
+.bg-insights::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    right: 5%;
+    width: 70%;
+    height: 55%;
+    background: radial-gradient(ellipse at 60% 50%, rgba(131, 56, 236, 0.05) 0%, transparent 65%);
+    animation: insights-drift-b 22s ease-in-out infinite alternate;
+    filter: blur(70px);
+}
+
+@keyframes insights-drift-a {
+    0% {
+        transform: translate(0%, 0%) scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translate(8%, 10%) scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-5%, 5%) scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+@keyframes insights-drift-b {
+    0% {
+        transform: translate(0%, 0%) scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-6%, -8%) scale(1.15);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(4%, 3%) scale(0.9);
+        opacity: 0.6;
+    }
+}
+
+/* Retained for possible use */
+.page-bg-mesh {
+    display: none;
+}
+
+.page-bg-depth {
+    display: none;
 }
 
 .services-glow-system {
