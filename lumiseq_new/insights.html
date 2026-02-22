@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insights | Lumiseq Cybersecurity</title>
+    <meta name="description"
+        content="Research-driven perspectives on governance, cloud security, and emerging risk from Lumiseq.">
     <link rel="stylesheet" href="index.css">
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 </head>
 
 <body>
-    <!-- Fixed cinematic canvas — shown on alternate sections via JS -->
-    <canvas id="sequence-canvas"
-        style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0;transition:opacity 0.8s ease;"></canvas>
+    <!-- Premium Background: CSS Grid Mesh + Atmospheric Depth -->
+    <div class="page-bg-mesh"></div>
+    <div class="page-bg-depth"></div>
 
     <nav class="navbar">
         <div class="container flex justify-between items-center">
@@ -31,11 +32,11 @@
         </div>
     </nav>
 
-    <main class="hero-nexus section" style="padding-top: 120px; position: relative; overflow: hidden;">
-        <!-- Hero Glow Background (matches about/services) -->
-        <div class="hero-glow" style="top: 20%; height: 50vw; opacity: 0.6;"></div>
+    <main class="section" style="padding-top: 120px; position: relative; overflow: hidden;">
+        <!-- Subtle hero depth glow -->
+        <div class="hero-glow" style="top: 10%; height: 50vw; opacity: 0.25;"></div>
 
-        <div class="container">
+        <div class="container" style="position: relative; z-index: 2;">
             <div class="text-center mb-xl reveal">
                 <h1 class="mb-md" style="font-size: 3.5rem;">Security <span class="text-gradient">Intelligence</span>
                     from <span class="text-gradient">Lumiseq</span></h1>
@@ -80,12 +81,12 @@
 
             <div class="flex items-center justify-center gap-md mt-lg reveal" style="padding: 1.5rem 0;">
                 <div
-                    style="flex-grow: 1; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0.6), var(--accent-lumi)); opacity: 0.85;">
+                    style="flex-grow: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-lumi)); opacity: 0.4;">
                 </div>
                 <p class="font-heading text-xs uppercase tracking-widest font-bold text-center"
-                    style="margin: 0; white-space: nowrap; opacity: 0.8;">Authority compounds through research.</p>
+                    style="margin: 0; white-space: nowrap; opacity: 0.6;">Authority compounds through research.</p>
                 <div
-                    style="flex-grow: 1; height: 2px; background: linear-gradient(90deg, var(--accent-lumi), rgba(255,255,255,0.6)); opacity: 0.85;">
+                    style="flex-grow: 1; height: 1px; background: linear-gradient(90deg, var(--accent-lumi), transparent); opacity: 0.4;">
                 </div>
             </div>
         </div>
@@ -119,7 +120,6 @@
         </div>
     </footer>
 
-    <script src="motion.js"></script>
     <script src="main.js"></script>
 </body>
 
