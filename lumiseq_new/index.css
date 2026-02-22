@@ -64,10 +64,10 @@ body.page-services {
     z-index: 0;
     pointer-events: none;
     background:
-        radial-gradient(circle at 25% 20%, rgba(112, 224, 0, 0.04) 0%, transparent 50%),
-        radial-gradient(circle at 50% 30%, rgba(112, 224, 0, 0.06) 0%, transparent 60%),
-        radial-gradient(circle at 75% 20%, rgba(112, 224, 0, 0.04) 0%, transparent 50%);
-    opacity: 0.8;
+        radial-gradient(circle at 25% 20%, rgba(112, 224, 0, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 50% 30%, rgba(112, 224, 0, 0.03) 0%, transparent 60%),
+        radial-gradient(circle at 75% 20%, rgba(112, 224, 0, 0.02) 0%, transparent 50%);
+    opacity: 0.4;
 }
 
 h1,
@@ -400,7 +400,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(112, 224, 0, 0.06), transparent 40%);
+    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(112, 224, 0, 0.03), transparent 40%);
     opacity: 0;
     transition: opacity 0.5s;
     z-index: 1;
@@ -555,10 +555,11 @@ p {
     transform: translate(-50%, -50%);
     width: 80vw;
     height: 80vw;
-    background: radial-gradient(circle, rgba(112, 224, 0, 0.08) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(112, 224, 0, 0.04) 0%, transparent 60%);
     filter: blur(80px);
     z-index: 0;
     pointer-events: none;
+    opacity: 0.4;
 }
 
 /* Glow text */

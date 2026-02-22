@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let W, H, entities = [];
         const type = heroTarget.classList.contains('hero-blueprint') ? 'blueprint' :
             heroTarget.classList.contains('hero-pulse') ? 'pulse' :
-                heroTarget.classList.contains('hero-flux') ? 'flux' : 'particles';
+                heroTarget.classList.contains('hero-flux') ? 'flux' :
+                    heroTarget.classList.contains('hero-nexus') ? 'nexus' : 'particles';
 
         const ACCENT = '112,224,0';
         const MUTED = '148,163,184';
@@ -58,6 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         w: Math.random() * 60 + 20, h: Math.random() * 10 + 5,
                         speed: Math.random() * 2 + 1,
                         opacity: Math.random() * 0.4
+                    });
+                }
+            } else if (type === 'nexus') {
+                // Elegant floating constellation for Insights
+                for (let i = 0; i < 55; i++) {
+                    entities.push({
+                        x: Math.random() * W, y: Math.random() * H,
+                        vx: (Math.random() - 0.5) * 0.3,
+                        vy: (Math.random() - 0.5) * 0.3,
+                        r: Math.random() * 1.5 + 0.5,
+                        accent: Math.random() > 0.6
                     });
                 }
             }
@@ -148,6 +160,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (i % 5 === 0) {
                         ctx.font = '10px monospace';
                         ctx.fillText(Math.random() > 0.5 ? '1' : '0', f.x + f.w + 5, f.y + 10);
+                    }
+                });
+            } else if (type === 'nexus') {
+                // Cinematic floating constellation — self-animating (not scroll-driven)
+                entities.forEach((p, i) => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+                    if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = p.accent ? `rgba(${ACCENT},0.7)` : `rgba(${MUTED},0.3)`;
+                    ctx.fill();
+
+                    // Connect nearby nodes with fading lines
+                    for (let j = i + 1; j < entities.length; j++) {
+                        const q = entities[j];
+                        const dx = p.x - q.x, dy = p.y - q.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 180) {
+                            const alpha = (1 - dist / 180) * 0.25;
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+                            ctx.strokeStyle = (p.accent || q.accent) ? `rgba(${ACCENT},${alpha})` : `rgba(${MUTED},${alpha * 0.5})`;
+                            ctx.lineWidth = 0.6; ctx.stroke();
+                        }
                     }
                 });
             }
