@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ─── 1. MODULAR HERO CANVAS ENGINE ──────────────────────────────────────
-    const heroTarget = document.querySelector('.hero, .hero-blueprint, .hero-pulse, .hero-flux');
+    const heroTarget = document.querySelector('.hero, .hero-blueprint, .hero-pulse, .hero-flux, .hero-nexus');
     if (heroTarget) {
         const canvas = document.createElement('canvas');
-        canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.35;';
+        canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.12;';
         heroTarget.style.position = 'relative';
         heroTarget.prepend(canvas);
 
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     ctx.beginPath();
                     ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(${ACCENT}, 0.6)`;
+                    ctx.fillStyle = `rgba(${ACCENT}, 0.25)`;
                     ctx.fill();
 
                     // Connect nearby nodes
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (dist < 120) {
                             ctx.beginPath();
                             ctx.moveTo(n.x, n.y); ctx.lineTo(m.x, m.y);
-                            ctx.strokeStyle = `rgba(${ACCENT}, ${(1 - dist / 120) * 0.2})`;
+                            ctx.strokeStyle = `rgba(${ACCENT}, ${(1 - dist / 120) * 0.08})`;
                             ctx.stroke();
                         }
                     }
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    ctx.fillStyle = p.accent ? `rgba(${ACCENT},0.7)` : `rgba(${MUTED},0.3)`;
+                    ctx.fillStyle = p.accent ? `rgba(${ACCENT},0.4)` : `rgba(${MUTED},0.15)`;
                     ctx.fill();
 
                     // Connect nearby nodes with fading lines
@@ -181,11 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         const dx = p.x - q.x, dy = p.y - q.y;
                         const dist = Math.sqrt(dx * dx + dy * dy);
                         if (dist < 180) {
-                            const alpha = (1 - dist / 180) * 0.25;
+                            const alpha = (1 - dist / 180) * 0.12;
                             ctx.beginPath();
                             ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
-                            ctx.strokeStyle = (p.accent || q.accent) ? `rgba(${ACCENT},${alpha})` : `rgba(${MUTED},${alpha * 0.5})`;
-                            ctx.lineWidth = 0.6; ctx.stroke();
+                            ctx.strokeStyle = (p.accent || q.accent) ? `rgba(${ACCENT},${alpha})` : `rgba(${MUTED},${alpha * 0.4})`;
+                            ctx.lineWidth = 0.5; ctx.stroke();
                         }
                     }
                 });

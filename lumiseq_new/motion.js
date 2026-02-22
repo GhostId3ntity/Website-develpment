@@ -92,10 +92,10 @@ class CinematicEngine {
         }
         partGeo.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
         const partMat = new THREE.PointsMaterial({
-            size: 0.1,
+            size: 0.08,
             color: 0x70e000,
             transparent: true,
-            opacity: 0.35,
+            opacity: 0.12,
             blending: THREE.AdditiveBlending
         });
         this.nearParticles = new THREE.Points(partGeo, partMat);
@@ -105,11 +105,11 @@ class CinematicEngine {
     createGrid() {
         this.grid = new THREE.GridHelper(500, 50, 0x70e000, 0x112211);
         this.grid.material.transparent = true;
-        this.grid.material.opacity = 0.35;
+        this.grid.material.opacity = 0.12;
         this.scene.add(this.grid);
 
         const lineGeo = new THREE.PlaneGeometry(500, 500, 50, 50);
-        const lineMat = new THREE.MeshBasicMaterial({ color: 0x70e000, wireframe: true, transparent: true, opacity: 0.12 });
+        const lineMat = new THREE.MeshBasicMaterial({ color: 0x70e000, wireframe: true, transparent: true, opacity: 0.04 });
         this.glowGrid = new THREE.Mesh(lineGeo, lineMat);
         this.glowGrid.rotation.x = -Math.PI / 2;
         this.scene.add(this.glowGrid);
@@ -280,7 +280,7 @@ class CinematicEngine {
         const delta = this.clock.getDelta();
         this.scrollPos += (this.targetScrollPos - this.scrollPos) * (this.lerpFactor * delta);
         this.canvasOpacity += (this.targetOpacity - this.canvasOpacity) * Math.min(3 * delta, 1);
-        this.canvas.style.opacity = this.canvasOpacity;
+        this.canvas.style.opacity = this.canvasOpacity * 0.45;
 
         const scrollFactor = this.scrollPos * Math.PI * 2;
 
