@@ -6,28 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insights | Lumiseq Cybersecurity</title>
     <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 </head>
 
 <body>
+    <!-- Fixed cinematic canvas — shown on alternate sections via JS -->
+    <canvas id="sequence-canvas"
+        style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0;transition:opacity 0.8s ease;"></canvas>
+
     <nav class="navbar">
         <div class="container flex justify-between items-center">
             <a href="index.html" class="flex items-center">
                 <img src="logo.svg" alt="Lumiseq" class="nav-logo">
             </a>
-            <ul class="nav-links flex gap-md" style="list-style: none;">
+            <ul class="nav-links flex gap-xl" style="list-style: none;">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="insights.html" class="nav-link active">Insights</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">Secure
-                Your
-                Sequence</a>
+                Your Sequence</a>
         </div>
     </nav>
 
-    <main class="section" style="padding-top: 120px;">
+    <main class="hero-flux section" style="padding-top: 120px; position: relative; overflow: hidden;">
+        <!-- Hero Glow Background (matches about/services) -->
+        <div class="hero-glow" style="top: 20%; height: 50vw; opacity: 0.6;"></div>
+
         <div class="container">
             <div class="text-center mb-xl reveal">
                 <h1 class="mb-md" style="font-size: 3.5rem;">Security <span class="text-gradient">Intelligence</span>
@@ -39,8 +46,8 @@
             <div class="insights-grid">
                 <!-- Insight Card 1 -->
                 <div class="insight-card glass reveal">
-                    <span class="text-xs font-heading font-bold mb-md" style="color: var(--accent-seq);">[ AI GOVERNANCE
-                        ]</span>
+                    <div class="text-xs font-heading font-bold mb-md" style="color: var(--accent-seq);">[ AI GOVERNANCE
+                        ]</div>
                     <h3 class="mb-md">ISO 42001 and the Future of AI Governance</h3>
                     <p class="text-sm mb-lg">Navigating model deployment risks and regulatory challenges in the era of
                         large language models.</p>
@@ -50,8 +57,8 @@
 
                 <!-- Insight Card 2 -->
                 <div class="insight-card glass reveal">
-                    <span class="text-xs font-heading font-bold mb-md" style="color: var(--accent-seq);">[ CLOUD
-                        SECURITY ]</span>
+                    <div class="text-xs font-heading font-bold mb-md" style="color: var(--accent-seq);">[ CLOUD SECURITY
+                        ]</div>
                     <h3 class="mb-md">Cloud Misconfiguration Risks in 2026</h3>
                     <p class="text-sm mb-lg">Examining critical infrastructure gaps that automated scanning tools often
                         overlook.</p>
@@ -61,8 +68,8 @@
 
                 <!-- Insight Card 3 -->
                 <div class="insight-card glass reveal">
-                    <span class="text-xs font-heading font-bold mb-md" style="color: var(--accent-seq);">[ COMPLIANCE
-                        ]</span>
+                    <div class="text-xs font-heading font-bold mb-md" style="color: var(--accent-seq);">[ COMPLIANCE ]
+                    </div>
                     <h3 class="mb-md">SOC 2 Readiness: Where Companies Fail</h3>
                     <p class="text-sm mb-lg">Analyzing common control deficiencies that delay audit cycles and
                         reporting.</p>
@@ -112,6 +119,7 @@
         </div>
     </footer>
 
+    <script src="motion.js"></script>
     <script src="main.js"></script>
 </body>
 

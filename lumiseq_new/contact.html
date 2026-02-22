@@ -5,83 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Lumiseq Cybersecurity</title>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 </head>
 
-<body>
+<body class="page-contact-journey">
+    <canvas id="sequence-canvas"
+        style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0;transition:opacity 0.8s ease;"></canvas>
+
     <nav class="navbar">
         <div class="container flex justify-between items-center">
             <a href="index.html" class="flex items-center">
                 <img src="logo.svg" alt="Lumiseq" class="nav-logo">
             </a>
-            <ul class="nav-links flex gap-md" style="list-style: none;">
+            <ul class="nav-links flex gap-xl" style="list-style: none;">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
             </ul>
             <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">Secure
-                Your
-                Sequence</a>
+                Your Sequence</a>
         </div>
     </nav>
 
-    <main class="section" style="padding-top: 180px;">
-        <div class="container">
-            <div class="grid grid-2 gap-xxl items-start">
-                <div class="reveal">
-                    <span class="fragment-tag">ENGAGEMENT</span>
-                    <h1 class="mb-md" style="font-size: 3.5rem;">Let’s Architect Your <br><span
-                            class="text-gradient">Security Resilience.</span></h1>
-                    <p class="mb-xl text-secondary" style="font-size: 1.1rem;">
-                        Schedule a confidential strategic consultation to evaluate your compliance posture, cloud
-                        configuration, and governance maturity.
-                    </p>
+    <main class="container hero-pulse">
+        <div class="contact-hero-split">
+            <!-- Left Side: Copy & Animation -->
+            <div class="contact-text-side reveal">
+                <span class="badge-contact">CONTACT US</span>
+                <h1>Let’s Architect Your <br><span class="text-gradient"
+                        style="background: linear-gradient(135deg, var(--accent-lumi) 0%, #00d2ff 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Security
+                        Resilience.</span></h1>
+                <p>
+                    Schedule a confidential strategic consultation to evaluate your compliance posture, cloud
+                    configuration, and governance maturity.
+                </p>
 
-                    <div class="glass p-xl" style="padding: 2rem; border-radius: 8px;">
-                        <h4 class="mb-md">Direct Communication</h4>
-                        <p class="mb-md"><a href="mailto:reach@lumiseq.com" class="nav-link"
-                                style="font-size: 1.2rem; color: var(--text-primary);">reach@lumiseq.com</a></p>
-                        <p class="text-xs uppercase tracking-widest opacity-50">Confidential. Structured. Direct.</p>
-                    </div>
+            </div>
 
-                    <p class="mt-xl mb-xl text-xs text-muted">All consultations are confidential. We respond within one
-                        business day.</p>
-                </div>
-
-                <div class="glass reveal" style="padding: 3rem; border-radius: 8px;">
-                    <form action="#" method="POST">
-                        <div class="form-row">
+            <!-- Right Side: Form Card -->
+            <div class="contact-form-side reveal" style="transition-delay: 200ms;">
+                <div class="contact-form-card">
+                    <form action="#" class="journey-form" onsubmit="event.preventDefault(); alert('Inquiry Sent');">
+                        <div class="grid-2">
                             <div class="form-group">
-                                <label class="form-label">First Name</label>
-                                <input type="text" class="form-input" placeholder="First name">
+                                <input type="text" class="form-control" placeholder="First Name" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Last Name</label>
-                                <input type="text" class="form-input" placeholder="Last name">
+                                <input type="text" class="form-control" placeholder="Last Name" required>
                             </div>
                         </div>
-
-                        <div class="form-row">
+                        <div class="grid-2">
                             <div class="form-group">
-                                <label class="form-label">Email*</label>
-                                <input type="email" class="form-input" placeholder="name@company.com" required>
+                                <input type="email" class="form-control" placeholder="Email*" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Phone Number*</label>
-                                <input type="tel" class="form-input" placeholder="+1 (555) 000-0000" required>
+                                <input type="tel" class="form-control" placeholder="Phone Number*" required>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label class="form-label">Company*</label>
-                            <input type="text" class="form-input" placeholder="Your organization" required>
+                            <input type="text" class="form-control" placeholder="Company*" required>
                         </div>
-
                         <div class="form-group">
-                            <label class="form-label">Reason For Inquiry</label>
-                            <select class="form-input">
+                            <select class="form-control" required>
                                 <option value="" disabled selected>Reason For Inquiry</option>
                                 <option value="sales">Sales Inquiry</option>
                                 <option value="partnership">Partnership Inquiry</option>
@@ -89,14 +78,11 @@
                                 <option value="other">Other Inquiry</option>
                             </select>
                         </div>
-
                         <div class="form-group">
-                            <label class="form-label">Message</label>
-                            <textarea class="form-input" rows="5" placeholder="How can we help you?"></textarea>
+                            <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
                         </div>
-
-                        <button type="submit" class="btn-form-submit">
-                            Submit
+                        <button type="submit" class="btn-submit-journey">
+                            Submit Request
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -123,7 +109,7 @@
                     <a href="services.html" class="nav-link text-sm">Services</a>
                     <a href="about.html" class="nav-link text-sm">About</a>
                     <a href="insights.html" class="nav-link text-sm">Insights</a>
-                    <a href="contact.html" class="nav-link text-sm">Contact</a>
+                    <a href="contact.html" class="nav-link text-sm active">Contact</a>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-heading">Connect</h4>
@@ -137,6 +123,7 @@
         </div>
     </footer>
 
+    <script src="motion.js"></script>
     <script src="main.js"></script>
 </body>
 
