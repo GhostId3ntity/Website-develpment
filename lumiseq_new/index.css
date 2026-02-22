@@ -557,12 +557,10 @@ p {
 }
 
 /* Services Page */
-.services-layout {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 3rem;
-    align-items: start;
+.services-content {
+    width: 100%;
 }
+
 
 .services-sidebar {
     position: sticky;
