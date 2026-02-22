@@ -21,8 +21,9 @@
                 <li><a href="insights.html" class="nav-link">Insights</a></li>
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
             </ul>
-            <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">Review
-                Posture</a>
+            <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">Secure
+                Your
+                Sequence</a>
         </div>
     </nav>
 
@@ -51,33 +52,57 @@
 
                 <div class="glass reveal" style="padding: 3rem; border-radius: 8px;">
                     <form action="#" method="POST">
-                        <div class="form-group">
-                            <label class="form-label">Name</label>
-                            <input type="text" class="form-input" placeholder="Enter your full name">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-input" placeholder="First name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-input" placeholder="Last name">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Work Email</label>
-                            <input type="email" class="form-input" placeholder="name@company.com">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Email*</label>
+                                <input type="email" class="form-input" placeholder="name@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number*</label>
+                                <input type="tel" class="form-input" placeholder="+1 (555) 000-0000" required>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label class="form-label">Service of Interest</label>
-                            <select class="form-input"
-                                style="appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F1F5F9%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 0.65rem auto;">
-                                <option>Select a service...</option>
-                                <option>ISO 27001 Implementation</option>
-                                <option>SOC 2 Readiness</option>
-                                <option>ISO 42001 (AI Governance)</option>
-                                <option>AWS/GCP Security Review</option>
-                                <option>General Advisory</option>
+                            <label class="form-label">Company*</label>
+                            <input type="text" class="form-input" placeholder="Your organization" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Reason For Inquiry</label>
+                            <select class="form-input">
+                                <option value="" disabled selected>Reason For Inquiry</option>
+                                <option value="sales">Sales Inquiry</option>
+                                <option value="partnership">Partnership Inquiry</option>
+                                <option value="recruitment">Recruitment Inquiry</option>
+                                <option value="other">Other Inquiry</option>
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label class="form-label">Infrastructure Overview</label>
-                            <textarea class="form-input" rows="4"
-                                placeholder="Briefly describe your environment (AWS, GCP, etc.)"></textarea>
+                            <label class="form-label">Message</label>
+                            <textarea class="form-input" rows="5" placeholder="How can we help you?"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Initiate Strategic
-                            Review</button>
+
+                        <button type="submit" class="btn-form-submit">
+                            Submit
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
                     </form>
                 </div>
             </div>
