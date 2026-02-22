@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumiseq | Illuminated Security Engineering</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+</head>
+
+<body>
+    <!-- Fixed cinematic canvas — shown on alternate sections via JS -->
+    <canvas id="sequence-canvas"
+        style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0;transition:opacity 0.8s ease;"></canvas>
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="logo.svg" alt="Lumiseq" class="nav-logo">
+            </a>
+            <ul class="nav-links flex gap-md" style="list-style: none;">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">Review
+                Posture</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section">
+            <div class="container hero-layout" style="position:relative;z-index:1;">
+                <div class="hero-content reveal flex flex-col items-center">
+                    <div
+                        style="width: 100%; max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+                        <div style="text-align: left; width: 100%;">
+                            <h1 class="mb-md" style="line-height: 1.1;">
+                                <span
+                                    style="display: block; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: clamp(1.4rem, 4.5vw, 2.22rem); margin-bottom: 0.5rem; opacity: 0.9; letter-spacing: 0.01em; color: var(--text-primary);">Illuminating
+                                    Sequences.</span>
+                                <span class="text-gradient"
+                                    style="display: block; font-size: clamp(2.4rem, 6vw, 4.5rem); letter-spacing: -0.03em;">Strengthening
+                                    Security.</span>
+                            </h1>
+                        </div>
+                        <p class="hero-subtext mb-lg text-center"
+                            style="font-size: 0.95rem; max-width: none; margin: 0 auto 2rem; opacity: 0.8; white-space: nowrap;">
+                            Governance-first cybersecurity consulting across compliance, cloud security, and risk
+                            intelligence. We engineer structured resilience into every layer of your digital ecosystem.
+                        </p>
+                        <div class="flex gap-md justify-center">
+                            <a href="contact.html" class="btn btn-primary">Schedule Strategic Review</a>
+                            <a href="services.html" class="btn btn-outline">Explore Services</a>
+                        </div>
+                        <p class="font-heading text-xs uppercase tracking-widest opacity-50 text-center"
+                            style="margin-top: 3rem;">
+                            Built for cloud-native organizations
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Reality Section -->
+        <section class="section bg-secondary">
+            <div class="container">
+                <div class="mb-md reveal flex flex-col items-center text-center">
+                    <span class="fragment-tag" style="display: block; margin-bottom: 2rem;">[ THE REALITY ]</span>
+
+                    <div
+                        style="width: 100%; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+                        <div style="text-align: left; width: 100%;">
+                            <h2 class="mb-md" style="line-height: 1.1;">
+                                <span
+                                    style="display: block; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: 1.6rem; margin-bottom: 0.3rem; opacity: 0.9; letter-spacing: 0.01em; color: var(--text-primary);">Security
+                                    Isn’t Broken.</span>
+                                <span class="text-gradient"
+                                    style="display: block; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em;">It’s
+                                    Just Fragmented.</span>
+                            </h2>
+                        </div>
+
+                        <p class="text-center"
+                            style="font-size: 0.9rem; color: var(--text-secondary); opacity: 0.7; font-family: var(--font-body); letter-spacing: 0.01em; max-width: none; margin: 0 auto; white-space: nowrap;">
+                            Modern companies operate across AWS, GCP, SaaS ecosystems, APIs, development pipelines, AI
+                            systems, and expanding regulatory frameworks.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reality-grid">
+                    <!-- Cards -->
+                    <div class="fragmented-card glass reveal">
+                        <span class="fragment-tag">Governance</span>
+                        <h3>Governance & Strategy</h3>
+                        <p>Security leadership exists without measurable maturity benchmarks or a long-term roadmap
+                            aligned to business growth.</p>
+                    </div>
+                    <div class="fragmented-card glass reveal">
+                        <span class="fragment-tag">Compliance</span>
+                        <h3>Compliance Programs</h3>
+                        <p>ISO 27001 and SOC 2 treated as certification projects instead of operational control systems.
+                        </p>
+                    </div>
+                    <div class="fragmented-card glass reveal">
+                        <span class="fragment-tag">Cloud</span>
+                        <h3>Cloud Environments</h3>
+                        <p>AWS and GCP infrastructures deployed without centralized configuration governance or
+                            disciplined IAM architecture.</p>
+                    </div>
+                    <div class="fragmented-card glass reveal">
+                        <span class="fragment-tag">Engineering</span>
+                        <h3>Product & Development</h3>
+                        <p>Secure SDLC and DevSecOps practices applied inconsistently, exposing codebases, dependencies,
+                            and CI/CD pipelines.</p>
+                    </div>
+                    <div class="fragmented-card glass reveal">
+                        <span class="fragment-tag">Readiness</span>
+                        <h3>Incident Readiness</h3>
+                        <p>Response plans documented but rarely tested under operational stress or integrated into
+                            workflows.</p>
+                    </div>
+                    <div class="fragmented-card glass reveal">
+                        <span class="fragment-tag">Culture</span>
+                        <h3>Human Risk</h3>
+                        <p>Security awareness treated as a one-time exercise rather than embedded cultural discipline.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: 1.5rem; margin-bottom: 0;">
+                    <p class="text-primary font-heading uppercase tracking-widest font-bold text-center mx-auto">The
+                        result is invisible risk accumulation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coherence Section -->
+        <section class="section" style="padding: 48px 0;">
+            <div class="container flex flex-col items-center text-center gap-lg" style="width: 100%;">
+                <div class="reveal mx-auto" style="max-width: 800px;">
+                    <h2 class="mb-md" style="font-size: 3.5rem; letter-spacing: -0.02em;">Lumiseq <span
+                            style="color: var(--accent-lumi);">Brings</span> Structure.</h2>
+                    <p class="mb-md text-muted" style="font-size: 1.1rem;">Fragmented controls create fragmented risk.
+                        Lumiseq engineers coherence.</p>
+                    <p class="mb-lg text-muted mx-auto" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;">
+                        We align governance frameworks, cloud architecture, compliance systems, and operational controls
+                        into a unified security structure designed to scale.
+                    </p>
+
+                    <!-- Vertical Schematic Connector -->
+                    <div class="reveal mx-auto"
+                        style="width: 1px; height: 24px; background: linear-gradient(to bottom, transparent, var(--accent-lumi), transparent); opacity: 0.3; margin-top: -0.5rem; margin-bottom: 1rem;">
+                    </div>
+                    <div class="flex flex-row justify-center items-center gap-lg w-full" style="white-space: nowrap;">
+                        <!-- Pillar 1 -->
+                        <div class="flex items-center gap-sm">
+                            <div
+                                style="width: 6px; height: 6px; background: var(--accent-lumi); border-radius: 1px; box-shadow: 0 0 8px var(--accent-lumi);">
+                            </div>
+                            <span class="font-heading font-bold"
+                                style="color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem;">Measurable
+                                maturity</span>
+                        </div>
+
+                        <!-- Connector 1 -->
+                        <div
+                            style="width: 30px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-lumi), transparent); opacity: 0.4;">
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="flex items-center gap-sm">
+                            <div
+                                style="width: 6px; height: 6px; background: var(--accent-lumi); border-radius: 1px; box-shadow: 0 0 8px var(--accent-lumi);">
+                            </div>
+                            <span class="font-heading font-bold"
+                                style="color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem;">Predictable
+                                Outcomes</span>
+                        </div>
+
+                        <!-- Connector 2 -->
+                        <div
+                            style="width: 30px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-lumi), transparent); opacity: 0.4;">
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="flex items-center gap-sm">
+                            <div
+                                style="width: 6px; height: 6px; background: var(--accent-lumi); border-radius: 1px; box-shadow: 0 0 8px var(--accent-lumi);">
+                            </div>
+                            <span class="font-heading font-bold"
+                                style="color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem;">Strategically
+                                Aligned</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visual-comparison reveal mx-auto"
+                    style="width: 100%; max-width: 650px; padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); background: rgba(10, 15, 25, 0.4); backdrop-filter: blur(10px); position: relative;">
+
+                    <!-- HUD Corner Brackets -->
+                    <div
+                        style="position: absolute; top: 12px; left: 12px; width: 12px; height: 12px; border-top: 2px solid var(--accent-lumi); border-left: 2px solid var(--accent-lumi); opacity: 0.5;">
+                    </div>
+                    <div
+                        style="position: absolute; top: 12px; right: 12px; width: 12px; height: 12px; border-top: 2px solid var(--accent-lumi); border-right: 2px solid var(--accent-lumi); opacity: 0.5;">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 12px; left: 12px; width: 12px; height: 12px; border-bottom: 2px solid var(--accent-lumi); border-left: 2px solid var(--accent-lumi); opacity: 0.5;">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 12px; right: 12px; width: 12px; height: 12px; border-bottom: 2px solid var(--accent-lumi); border-right: 2px solid var(--accent-lumi); opacity: 0.5;">
+                    </div>
+
+                    <!-- Header Row -->
+                    <div class="flex justify-between items-center w-full mb-md" style="padding: 0 10px;">
+                        <p class="font-heading font-bold"
+                            style="color: var(--text-secondary); width: 200px; text-align: center; font-size: 1rem;">
+                            Reactive</p>
+                        <div style="width: 30px;"></div> <!-- Spacer -->
+                        <p class="font-heading font-bold"
+                            style="color: var(--accent-lumi); width: 200px; text-align: center; font-size: 1rem;">
+                            Lumiseq</p>
+                    </div>
+
+                    <!-- Diagram Row -->
+                    <div class="flex justify-between items-center w-full px-md">
+
+                        <!-- Reactive Box -->
+                        <div
+                            style="width: 200px; height: 200px; border: 1px dashed rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <div style="width: 70px; height: 50px; position: relative;">
+                                <div
+                                    style="width: 14px; height: 14px; background: #94a3b8; border-radius: 4px; position: absolute; top: 0; left: 0;">
+                                </div>
+                                <div
+                                    style="width: 14px; height: 14px; background: #94a3b8; border-radius: 4px; position: absolute; top: 0; right: 0;">
+                                </div>
+                                <div
+                                    style="width: 14px; height: 14px; background: #94a3b8; border-radius: 4px; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div
+                            style="font-size: 1.5rem; color: var(--accent-lumi); font-weight: bold; display: flex; justify-content: center; align-items: center;">
+                            →</div>
+
+                        <!-- Lumiseq Box -->
+                        <div
+                            style="width: 200px; height: 200px; background: rgba(112, 224, 0, 0.03); border: 1px solid rgba(112, 224, 0, 0.7); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 24px; border-radius: 12px; box-shadow: 0 0 50px rgba(112,224,0,0.05);">
+                            <div
+                                style="width: 100px; height: 5px; background: var(--accent-lumi); border-radius: 9999px;">
+                            </div>
+                            <div
+                                style="width: 100px; height: 5px; background: var(--accent-lumi); border-radius: 9999px;">
+                            </div>
+                            <div
+                                style="width: 100px; height: 5px; background: var(--accent-lumi); border-radius: 9999px;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Framework Section -->
+        <section id="method" class="section bg-secondary" style="padding: 48px 0;">
+            <div class="container" style="width: 100%;">
+                <div class="text-center mb-xl reveal">
+                    <span class="fragment-tag">METHODOLOGY</span>
+                    <h2 class="mb-md" style="font-size: 3rem;">The Lumiseq Security <br><span
+                            class="text-gradient">Architecture Framework™</span></h2>
+                    <p class="max-width-600 mx-auto">Methodology builds trust. Structure builds resilience.</p>
+                </div>
+
+                <div class="framework-progression reveal">
+                    <div class="framework-line">
+                        <div class="framework-line-progress"></div>
+                    </div>
+                    <div class="framework-step" data-step="1">
+                        <div class="step-icon">01</div>
+                        <h3>Assess</h3>
+                        <p class="text-xs mt-md">Evaluating maturity, posture, and workflows.</p>
+                    </div>
+                    <div class="framework-step" data-step="2">
+                        <div class="step-icon">02</div>
+                        <h3>Design</h3>
+                        <p class="text-xs mt-md">Architecting structured control frameworks.</p>
+                    </div>
+                    <div class="framework-step" data-step="3">
+                        <div class="step-icon">03</div>
+                        <h3>Implement</h3>
+                        <p class="text-xs mt-md">Embedding controls into operations.</p>
+                    </div>
+                    <div class="framework-step" data-step="4">
+                        <div class="step-icon">04</div>
+                        <h3>Validate</h3>
+                        <p class="text-xs mt-md">Systematic verification and testing.</p>
+                    </div>
+                    <div class="framework-step" data-step="5">
+                        <div class="step-icon">05</div>
+                        <h3>Monitor</h3>
+                        <p class="text-xs mt-md">Ongoing oversight and evolution.</p>
+                    </div>
+                </div>
+
+                <p class="text-center italic text-muted reveal" style="margin-top: 3rem;">Security maturity is
+                    iterative. We design systems that adapt.</p>
+            </div>
+        </section>
+
+
+        <!-- Final CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="glass reveal text-center"
+                    style="padding: 6rem; border-radius: 12px; position: relative; overflow: hidden;">
+                    <div
+                        style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(112, 224, 0, 0.05) 0%, transparent 60%); pointer-events: none;">
+                    </div>
+                    <h2 class="mb-md" style="font-size: clamp(2rem, 4vw, 3.5rem);">Build Resilience Into <br><span
+                            class="text-gradient">Every Layer of Your Architecture.</span></h2>
+                    <p class="mb-xl text-primary font-bold">Gain structured clarity on your security posture in 30
+                        minutes.</p>
+                    <a href="contact.html" class="btn btn-primary btn-xl">Schedule Strategic Security Review</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section"
+        style="padding: 4rem 0 2rem 0; border-top: 1px solid var(--border-low); background: var(--bg-primary); position: relative; z-index: 10;">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-col" style="max-width: 300px;">
+                    <img src="logo.svg" alt="Lumiseq" class="footer-logo mb-md" style="width: 140px;">
+                    <p class="text-xs text-muted" style="line-height: 1.6;">Providing elite cybersecurity consulting for
+                        the modern enterprise.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <a href="services.html" class="nav-link text-sm">Services</a>
+                    <a href="about.html" class="nav-link text-sm">About</a>
+                    <a href="insights.html" class="nav-link text-sm">Insights</a>
+                    <a href="contact.html" class="nav-link text-sm">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Connect</h4>
+                    <a href="mailto:reach@lumiseq.com" class="nav-link text-sm">reach@lumiseq.com</a>
+                    <a href="#" class="nav-link text-sm">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="text-xs opacity-50">&copy; 2026 Lumiseq. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="motion.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
