@@ -583,26 +583,11 @@ p {
     font-weight: 600;
     font-size: 0.9rem;
     transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.sidebar-link::before {
-    content: '';
-    width: 0;
-    height: 1px;
-    background: var(--accent-lumi);
-    transition: var(--transition);
 }
 
 .sidebar-link:hover,
 .sidebar-link.active {
     color: var(--text-primary);
-}
-
-.sidebar-link.active::before {
-    width: 20px;
 }
 
 .service-grid {
