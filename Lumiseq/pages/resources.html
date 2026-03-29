@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library — Lumiseq Laboratory</title>
+  <meta name="description" content="Technical research and structural insights from the Lumiseq laboratory.">
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="page-resources" style="background:var(--bg);">
+
+  <header id="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/images/logo.svg" alt="Lumiseq Logo" class="logo-mark" style="height:32px; width:auto;">
+      </a>
+      <nav><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li class="nav-dropdown">
+            <a href="../index.html#services" class="nav-dropdown-toggle">Services <span class="dropdown-arrow">▾</span></a>
+          <ul class="dropdown-menu">
+              <li><a href="cybersecurity.html"><span class="dd-icon" style="color:var(--accent);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></span><span><strong>Cybersecurity</strong><em>Full-stack defense</em></span></a></li>
+              <li><a href="webdev.html"><span class="dd-icon" style="color:var(--blue);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span><span><strong>Web + SEO</strong><em>Engineering & Ranking</em></span></a></li>
+              <li><a href="design.html"><span class="dd-icon" style="color:var(--purple);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5 11 5.67 11 6.5 10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5 16 5.67 16 6.5 15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9 19 10.5 18.33 12 17.5 12z"/></svg></span><span><strong>Creative Design</strong><em>Brand & Motion</em></span></a></li>
+            </ul>
+        </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resources.html" class="active">Resources</a></li>
+        </ul></nav>
+        <a href="contact.html" class="btn btn-accent" style="padding:.6rem 1.4rem;font-size:.85rem;">Contact Us</a>
+    </div>
+  </header>
+
+  <main class="hub-container">
+    
+    <!-- MINIMAL TEXT HEADER -->
+    <header class="hub-header-minimal">
+      <h1>Research Library</h1>
+      <p>Technical blueprints, architectural intelligence, and cyber-defense strategies engineered by the Lumiseq team.</p>
+      
+      <!-- FILTER BAR -->
+      <div class="filter-bar-minimal" style="margin-top: 1rem;">
+          <button class="filter-btn-elite active" data-filter="all">All Intelligence</button>
+          <button class="filter-btn-elite" data-filter="cyber">Security</button>
+          <button class="filter-btn-elite" data-filter="web">Engineering</button>
+          <button class="filter-btn-elite" data-filter="design">Design</button>
+      </div>
+    </header>
+
+    <!-- PROPER 3x WIDE GRID — Each card is a full anchor tag -->
+    <div class="blog-grid-wide" id="blog-grid">
+
+        <a href="blog/zero-trust.html" class="blog-card" data-category="cyber" aria-label="Read: The Zero-Trust Frontier Article">
+            <div class="blog-thumb-fixed"><img src="../assets/images/zta_node.png" alt="Zero-Trust Architecture Illustration" aria-label="3D rendering of a Zero-Trust security node representing continuous verification."></div>
+            <div class="blog-card-body">
+                <div class="tag tag-cyber" style="margin-bottom: 1rem;">Cybersecurity</div>
+                <h3>The Zero-Trust Frontier: Re-architecting Security</h3>
+                <span class="blog-proper-cta">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog/edge-lcp.html" class="blog-card" data-category="web" aria-label="Read: Optimizing LCP Article">
+            <div class="blog-thumb-fixed"><img src="../assets/images/edge_mesh.png" alt="Edge Mesh Visualization" aria-label="Technographic mesh illustrating sub-500ms edge rendering and performance optimization."></div>
+            <div class="blog-card-body">
+                <div class="tag tag-web" style="margin-bottom: 1rem;">Engineering</div>
+                <h3>Optimizing LCP: Sub-500ms Rendering</h3>
+                <span class="blog-proper-cta">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog/ui-depth.html" class="blog-card" data-category="design" aria-label="Read: Psychology of UI Depth Article">
+            <div class="blog-thumb-fixed"><img src="../assets/images/ui_blueprint.png" alt="UI Blueprint Layout" aria-label="Architectural blueprint showing the layering and depth levels of a premium user interface."></div>
+            <div class="blog-card-body">
+                <div class="tag tag-design" style="margin-bottom: 1rem;">Design</div>
+                <h3>Psychology of UI Depth: Digital Authority</h3>
+                <span class="blog-proper-cta">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog/supply-chain.html" class="blog-card" data-category="cyber" aria-label="Read: Software Supply Chain Article">
+            <div class="blog-thumb-fixed"><img src="../assets/images/supply_chain_link.png" alt="Supply Chain Link" loading="lazy" aria-label="Gleaming metallic link representing a hardened and secure software supply chain pipeline."></div>
+            <div class="blog-card-body">
+                <div class="tag tag-cyber" style="margin-bottom: 1rem;">Cybersecurity</div>
+                <h3>Software Supply Chain: Hardening Pipelines</h3>
+                <span class="blog-proper-cta">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog/distributed-state.html" class="blog-card" data-category="web" aria-label="Read: Distributed State Article">
+            <div class="blog-thumb-fixed"><img src="../assets/images/state_sync.png" alt="Distributed state sync node" loading="lazy" aria-label="Abstract 3D node showing synchronized data state across a distributed technical environment."></div>
+            <div class="blog-card-body">
+                <div class="tag tag-web" style="margin-bottom: 1rem;">Engineering</div>
+                <h3>Distributed State: Consistency at Scale</h3>
+                <span class="blog-proper-cta">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog/motion-design.html" class="blog-card" data-category="design" aria-label="Read: Motion Laws Article">
+            <div class="blog-thumb-fixed"><img src="../assets/images/motion_trajectory.png" alt="Motion Trajectory physics" loading="lazy" aria-label="Visual representation of physical motion laws applied to digital UI elements for organic feel."></div>
+            <div class="blog-card-body">
+                <div class="tag tag-design" style="margin-bottom: 1rem;">Design</div>
+                <h3>Motion Laws: Physics in UI Interfaces</h3>
+                <span class="blog-proper-cta">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog/quantum-encryption.html" class="blog-card" data-category="cyber" aria-label="Read: Quantum Resistance Article">
+            <div class="blog-thumb-fixed"><img src="../assets/images/quantum_lattice.png" alt="Quantum Lattice Cryptography" loading="lazy" aria-label="Multi-dimensional lattice structure representing post-quantum resistant cryptographic algorithms."></div>
+            <div class="blog-card-body">
+                <div class="tag tag-cyber" style="margin-bottom: 1rem;">Cybersecurity</div>
+                <h3>Quantum Resistance: Lattice Cryptography</h3>
+                <span class="blog-proper-cta">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog/legacy-migrations.html" class="blog-card" data-category="web" aria-label="Read: Migration Bridge Article">
+            <div class="blog-thumb-fixed"><img src="../assets/images/migration_bridge.png" alt="Migration Bridge" loading="lazy" aria-label="Sleek architectural bridge symbolizing the secure transition from legacy monolithic systems to decoupled clouds."></div>
+            <div class="blog-card-body">
+                <div class="tag tag-web" style="margin-bottom: 1rem;">Engineering</div>
+                <h3>The Migration Bridge: Decoupling Legacy</h3>
+                <span class="blog-proper-cta">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog/accessibility.html" class="blog-card" data-category="design" aria-label="Read: Inclusive Advantage Article">
+            <div class="blog-thumb-fixed"><img src="../assets/images/a11y_module.png" alt="Accessibility Module" loading="lazy" aria-label="Detailed technical module illustrating inclusive design principles and structural accessibility layers."></div>
+            <div class="blog-card-body">
+                <div class="tag tag-design" style="margin-bottom: 1rem;">Design</div>
+                <h3>Inclusive Advantage: Structural Accessibility</h3>
+                <span class="blog-proper-cta">Read Article &rarr;</span>
+            </div>
+        </a>
+
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <img src="../assets/images/logo.svg" alt="Lumiseq Logo" class="logo-mark" style="height:32px; width:auto;">
+          </a>
+          <p>Elite cybersecurity and digital engineering for the modern enterprise.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="cybersecurity.html">Cybersecurity</a>
+          <a href="webdev.html">Web Development</a>
+          <a href="design.html">Creative Design</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="about.html">About Us</a>
+          <a href="resources.html" class="active">Resources</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumiseq. All rights reserved.</p>
+        <p>Architecting Resilience.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn-elite');
+      const blogCards = document.querySelectorAll('.blog-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filterValue = btn.getAttribute('data-filter');
+
+          // Toggle Active Button
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // Filter with GSAP
+          blogCards.forEach(card => {
+            const cardCat = card.getAttribute('data-category');
+            if (filterValue === 'all' || cardCat === filterValue) {
+              gsap.to(card, { 
+                scale: 1, 
+                opacity: 1, 
+                duration: 0.4, 
+                display: 'flex',
+                ease: "power2.out" 
+              });
+            } else {
+              gsap.to(card, { 
+                scale: 0.9, 
+                opacity: 0, 
+                duration: 0.3, 
+                display: 'none',
+                ease: "power2.in"
+              });
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

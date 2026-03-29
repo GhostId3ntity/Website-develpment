@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardening the Software Supply Chain | Lumiseq Blog</title>
+  <meta name="description" content="Technical analysis of modern supply chain attacks (SolarWinds, Log4j) and how to implement zero-trust build systems and SBOMs.">
+  <link rel="icon" href="../../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/blog-post.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body class="blog-page">
+
+  
+  <!-- ========== NAVBAR ========== -->
+  <header id="navbar">
+    <div class="container">
+      <a href="../../index.html" class="nav-logo">
+        <img src="../../assets/images/logo.svg" alt="Lumiseq Logo" class="logo-mark" style="height:32px; width:auto;">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li class="nav-dropdown">
+            <a href="../../index.html#services" class="nav-dropdown-toggle">Services <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../../pages/cybersecurity.html"><span class="dd-icon" style="color:var(--accent);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></span><span><strong>Cybersecurity</strong><em>Full-stack defense</em></span></a></li>
+              <li><a href="../../pages/webdev.html"><span class="dd-icon" style="color:var(--blue);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span><span><strong>Web + SEO</strong><em>Engineering & Ranking</em></span></a></li>
+              <li><a href="../../pages/design.html"><span class="dd-icon" style="color:var(--purple);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5 11 5.67 11 6.5 10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5 16 5.67 16 6.5 15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9 19 10.5 18.33 12 17.5 12z"/></svg></span><span><strong>Creative Design</strong><em>Brand & Motion</em></span></a></li>
+            </ul>
+          </li>
+          <li><a href="../../pages/about.html">About</a></li>
+          <li><a href="../../pages/resources.html" class="active">Resources</a></li>
+        </ul>
+      </nav>
+      <a href="../../pages/contact.html" class="btn btn-accent" style="padding:.6rem 1.4rem;font-size:.85rem;">Contact Us</a>
+    </div>
+  </header>
+
+  <main class="blog-theme-root" data-category="cyber">
+    <!-- MODERN HEADER -->
+    <header class="modern-header">
+      <div class="topic-badge">Cybersecurity</div>
+      <div class="post-date">March 12, 2026</div>
+      <h1 class="modern-post-title">Software Supply Chain: Hardening Pipelines</h1>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="modern-hero-container">
+      <img src="../../assets/images/supply_chain_link.png" alt="Supply Chain Security" class="modern-hero-img">
+    </div>
+
+    <!-- CONTENT GRID -->
+    <div class="modern-post-grid">
+      <article class="article-content">
+        <section id="landscape">
+          <h2>The New Threat Landscape</h2>
+          <p>In the wake of the SolarWinds and Log4j incidents, the industry has realized a terrifying truth: **it doesn't matter how secure your perimeter is if your dependencies are compromised.** Modern software is no longer built from scratch; it is assembled from thousands of third-party blocks. Each block is a potential vector for catastrophic failure.</p>
+
+          <h3>The Shift from "Trusting" to "Verifying"</h3>
+          <p>Historically, we treated our build servers as "safe havens." We assumed that if a developer committed code, the resulting binary was trustworthy. Supply chain security turns this on its head. In a Zero-Trust world, we assume that the build environment, the developer's machine, or the repository itself could be compromised at any time.</p>
+        </section>
+
+        <section id="sbom">
+          <h2>SBOM: Transparency as a Defense</h2>
+          <p>A **Software Bill of Materials (SBOM)** is the first line of defense. It is a machine-readable inventory of every software component, library, and module used in a project. Without an SBOM, you are flying blind. When a new vulnerability like Log4shell is announced, organizations without SBOMs spend weeks manually auditing repositories.</p>
+
+          <div class="tech-box-dark">
+            <h4>Technical Insight</h4>
+            <p>Cryptographically signed binary attestation link for CI/CD package integrity. Every build artifact is pinned and verified against a source of truth.</p>
+          </div>
+        </section>
+
+        <section id="pipeline">
+          <h2>Hardening the Build Pipeline</h2>
+          <p>The build pipeline (Jenkins, GitHub Actions, GitLab CI) is the most targeted piece of infrastructure today. Attackers don't want to break into your production app; they want to break into the machine that *builds* your app. Hardening requires <strong>isolated build runners</strong>, secrets management that prevents leakages, and the removal of persistent state between builds.</p>
+        </section>
+
+        <section id="attestation">
+          <h2>Binary Attestation & Sigstore</h2>
+          <p>How do you know the binary you are running in production actually matches the source code in your repo? <strong>Attestation.</strong> By using tools like Sigstore and SLSA, we can cryptographically sign every step of the build process. If a single byte was altered by an attacker between the "commit" and the "deploy," the signature will fail, and the deployment will be blocked.</p>
+        </section>
+
+        <div class="bottom-article-cta" style="margin-top: 4rem; padding: 3rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 20px; text-align: center;">
+          <div class="topic-badge" style="display:inline-flex; margin-bottom: 1rem;">Cybersecurity</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Protect your CI/CD pipelines with Lumiseq’s validated supply chain audits.</h3>
+          <a href="../cybersecurity.html" class="btn btn-accent" style="padding: 0.8rem 2rem; font-weight: 700;">View Security Solutions</a>
+        </div>
+
+        <div class="post-nav-modern" style="margin-top: 3rem;">
+          <a href="../resources.html">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
+            Back to Resources
+          </a>
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="modern-sidebar">
+        <div class="glass-sidebar-card">
+          <h4>In This Article</h4>
+          <nav class="toc-nav">
+            <a href="#landscape" class="toc-link">The New Threat Landscape</a>
+            <a href="#sbom" class="toc-link">SBOM: Transparency as a Defense</a>
+            <a href="#pipeline" class="toc-link">Hardening the Build Pipeline</a>
+            <a href="#attestation" class="toc-link">Binary Attestation & Sigstore</a>
+          </nav>
+        </div>
+        
+      </aside>
+    </div>
+  </main>
+
+  
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../index.html" class="nav-logo">
+            <img src="../../assets/images/logo.svg" alt="Lumiseq Logo" class="logo-mark" style="height:32px; width:auto;">
+          </a>
+          <p>Elite cybersecurity and digital engineering for the modern enterprise.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="../../pages/cybersecurity.html">Cybersecurity</a>
+          <a href="../../pages/webdev.html">Web Development</a>
+          <a href="../../pages/design.html">Creative Design</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="../../pages/about.html">About Us</a>
+          <a href="../../pages/resources.html">Resources</a>
+          <a href="../../pages/contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumiseq. All rights reserved.</p>
+        <p>Architecting Resilience.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
