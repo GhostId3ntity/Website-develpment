@@ -1,0 +1,147 @@
+/* ── LEGAL PAGE HIGH-FIDELITY STYLES ── */
+
+.legal-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+  margin-top: 4rem;
+}
+
+/* ── STICKY SIDEBAR ── */
+.legal-sidebar {
+  position: sticky;
+  top: 140px;
+  height: fit-content;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.legal-sidebar h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.legal-sidebar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.legal-sidebar ul li a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-radius: 6px;
+  transition: all 0.3s var(--ease);
+}
+
+.legal-sidebar ul li a:hover {
+  color: var(--accent);
+  background: rgba(112, 224, 0, 0.05);
+}
+
+.legal-sidebar ul li a.active {
+  color: var(--accent);
+  background: rgba(112, 224, 0, 0.08);
+  font-weight: 600;
+}
+
+/* ── CONTENT STYLING ── */
+.legal-content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.legal-section {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-section:last-child {
+  border-bottom: none;
+}
+
+.legal-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.legal-section h4 {
+  color: var(--text);
+  margin: 2rem 0 1rem;
+  font-size: 1.1rem;
+}
+
+.legal-section p {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.legal-section ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.legal-section li {
+  margin-bottom: 0.8rem;
+  color: var(--muted);
+}
+
+.legal-section b, .legal-section strong {
+  color: var(--text);
+}
+
+/* ── HERO ── */
+.legal-hero {
+  padding: 120px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.legal-hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 992px) {
+  .legal-sidebar {
+    display: none; /* User requested removal on mobile for cleaner UX */
+  }
+  
+  .legal-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .legal-hero {
+    padding: 100px 0 40px;
+  }
+  
+  .legal-section h2 {
+    font-size: 1.5rem;
+  }
+}

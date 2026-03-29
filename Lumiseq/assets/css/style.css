@@ -1158,6 +1158,18 @@ footer {
   color: var(--muted);
 }
 
+.footer-bottom p a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  position: relative;
+}
+
+.footer-bottom p a:hover {
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
 /* ── Mobile Navigation Toggle ── */
 .nav-toggle {
   display: none;

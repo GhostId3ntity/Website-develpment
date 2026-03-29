@@ -11,32 +11,48 @@
   <link rel="stylesheet" href="../assets/css/services.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous"  defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Lumiseq",
+    "url": "https://lumiseq.com",
+    "logo": "https://lumiseq.com/assets/images/logo.svg",
+    "sameAs": [],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "reach@lumiseq.com",
+      "contactType": "customer service"
+    }
+  }
+  </script>
 </head>
 <body class="page-cyber">
 
+  <!-- ========== NAVBAR ========== -->
   <header id="navbar">
     <div class="container">
       <a href="../index.html" class="nav-logo">
         <img src="../assets/images/logo.svg" alt="Lumiseq Logo" class="logo-mark" style="height:32px; width:auto;">
       </a>
-      <nav><ul>
-        <li><a href="../index.html">Home</a></li>
-        <li class="nav-dropdown">
-          <a href="#" class="nav-dropdown-toggle active">Services <span class="dropdown-arrow">▾</span></a>
-          <ul class="dropdown-menu">
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li class="nav-dropdown">
+            <a href="#" class="nav-dropdown-toggle active">Services <span class="dropdown-arrow">▾</span></a>
+            <ul class="dropdown-menu">
               <li><a href="cybersecurity.html"><span class="dd-icon" style="color:var(--accent);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></span><span><strong>Cybersecurity</strong><em>Full-stack defense</em></span></a></li>
               <li><a href="webdev.html"><span class="dd-icon" style="color:var(--blue);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span><span><strong>Web + SEO</strong><em>Engineering & Ranking</em></span></a></li>
-              <li><a href="design.html"><span class="dd-icon" style="color:var(--purple);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5 11 5.67 11 6.5 10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5 16 5.67 16 6.5 15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9 19 10.5 18.33 12 17.5 12z"/></svg></span><span><strong>Creative Design</strong><em>Brand & Motion</em></span></a></li>
+              <li><a href="design.html"><span class="dd-icon" style="color:var(--purple);"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5 11 5.67 11 6.5 10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5 16 5.67 16 6.5 15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12z"/></svg></span><span><strong>Creative Design</strong><em>Brand & Motion</em></span></a></li>
             </ul>
-        </li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li class="mobile-only"><a href="contact.html" class="nav-btn-mobile">Contact Us</a></li>
-      </ul></nav>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li class="mobile-only"><a href="contact.html" class="nav-btn-mobile">Contact Us</a></li>
+        </ul>
+      </nav>
       <div class="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
       <a href="contact.html" class="btn btn-accent" style="padding:.6rem 1.4rem;font-size:.85rem;">Contact Us</a>
     </div>
@@ -175,6 +191,7 @@
     </div>
   </section>
 
+  <!-- ========== FOOTER ========== -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -198,13 +215,13 @@
         </div>
         <div class="footer-col">
           <h5>Legal</h5>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Lumiseq. All Rights Reserved.</p>
-        <p>Architecting Resilience.</p>
+        <p>&copy; 2026 Lumiseq Tech Private Limited. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
       </div>
     </div>
   </footer>
