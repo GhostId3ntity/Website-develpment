@@ -1220,16 +1220,19 @@ body.mobile-nav-visible .nav-toggle span:nth-child(3) {
 /* ── RESPONSIVE ── */
 @media (max-width:1100px) {
   #navbar .container { justify-content: space-between; }
-  #navbar nav { display: none; }
   .nav-toggle { display: flex; }
   #navbar .btn-accent { display: none; }
 
-  /* ── Mobile Side-Drawer (Luxury Acrylic) ── */
-  body.mobile-nav-visible #navbar nav {
+  body.mobile-nav-visible {
+    overflow: hidden;
+  }
+
+  /* ── Mobile Nav Overlay Base ── */
+  #navbar nav {
     display: flex !important;
     position: fixed;
-    top: 0; right: 0; left: 0;
-    width: 100%; height: 100vh;
+    top: 0; right: 0; left: 0; bottom: 0;
+    width: 100vw;
     background: rgba(1, 4, 8, 0.98);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
@@ -1238,12 +1241,6 @@ body.mobile-nav-visible .nav-toggle span:nth-child(3) {
     justify-content: center;
     align-items: center;
     padding: 4rem 2rem;
-    transform: translateY(0);
-    opacity: 1;
-    transition: transform 0.4s var(--ease), opacity 0.4s var(--ease);
-  }
-
-  body:not(.mobile-nav-visible) #navbar nav {
     transform: translateY(-20px);
     opacity: 0;
     visibility: hidden;
@@ -1251,7 +1248,14 @@ body.mobile-nav-visible .nav-toggle span:nth-child(3) {
     transition: transform 0.4s var(--ease), opacity 0.4s var(--ease), visibility 0.4s;
   }
 
-  body.mobile-nav-visible #navbar nav ul {
+  body.mobile-nav-visible #navbar nav {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  #navbar nav ul {
     display: flex !important;
     flex-direction: column;
     align-items: center;
@@ -1259,7 +1263,7 @@ body.mobile-nav-visible .nav-toggle span:nth-child(3) {
     width: 100%;
   }
 
-  body.mobile-nav-visible #navbar nav ul li a {
+  #navbar nav ul li a {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text) !important;
