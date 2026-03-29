@@ -1179,6 +1179,7 @@ footer {
   gap: 6px;
   cursor: pointer;
   z-index: 1001;
+  position: relative; /* REQUIRED FOR Z-INDEX */
   width: 48px;
   height: 48px;
   background: rgba(255, 255, 255, 0.04);
