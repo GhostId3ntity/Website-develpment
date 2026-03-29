@@ -1260,6 +1260,38 @@ body.mobile-nav-visible .nav-toggle span:nth-child(3) {
     color: var(--text) !important;
   }
 
+  /* Mobile Dropdown Menu */
+  .nav-dropdown .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.3s var(--ease);
+  }
+
+  .nav-dropdown.nav-dropdown-active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .nav-dropdown.nav-dropdown-active .dropdown-arrow {
+    display: inline-block;
+    transform: rotate(180deg);
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;

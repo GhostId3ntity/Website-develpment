@@ -21,10 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Close mobile nav when a link is clicked
+  // Close mobile nav when a link is clicked (unless it's the dropdown toggle)
   const navLinksList = document.querySelectorAll('nav ul li a');
   navLinksList.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      if (link.classList.contains('nav-dropdown-toggle') && window.innerWidth <= 1100) {
+        e.preventDefault();
+        link.closest('.nav-dropdown').classList.toggle('nav-dropdown-active');
+        return;
+      }
       document.body.classList.remove('mobile-nav-visible');
     });
   });
