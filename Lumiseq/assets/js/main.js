@@ -7,11 +7,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // ── 1. NAVBAR ─────────────────────────────────────────────
+  // ── 1. NAVBAR & MOBILE TOGGLE ────────────────────────────────
   const navbar = document.getElementById('navbar');
+  const navToggle = document.querySelector('.nav-toggle');
+
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
   }, { passive: true });
+
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      document.body.classList.toggle('mobile-nav-visible');
+    });
+  }
+
+  // Close mobile nav when a link is clicked
+  const navLinksList = document.querySelectorAll('nav ul li a');
+  navLinksList.forEach(link => {
+    link.addEventListener('click', () => {
+      document.body.classList.remove('mobile-nav-visible');
+    });
+  });
 
   // ── 2. HERO ENTRANCE ──────────────────────────────────────
   gsap.set('#hero-text', { autoAlpha: 1 });

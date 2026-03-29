@@ -353,15 +353,19 @@ header.navbar-blog {
 /* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
   .modern-post-grid {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem; /* Reduced gap for top-to-bottom flow */
   }
   .modern-sidebar {
     width: 100%;
     max-width: var(--content-max-width);
     position: relative;
     top: 0;
+    margin-bottom: 2rem; /* Add space before content */
+  }
+  .glass-sidebar-card {
+    margin-bottom: 0; /* Clear bottom margin as it's now at the top */
   }
 }
 
