@@ -17,7 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (navToggle) {
     navToggle.addEventListener('click', () => {
+      const isClosing = document.body.classList.contains('mobile-nav-visible');
       document.body.classList.toggle('mobile-nav-visible');
+      
+      // Reset dropdown accordion when closing
+      if (isClosing) {
+        setTimeout(() => {
+          document.querySelectorAll('.nav-dropdown-active').forEach(dd => dd.classList.remove('nav-dropdown-active'));
+        }, 400); // Wait for nav to finish sliding out
+      }
     });
   }
 
@@ -79,25 +87,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── 4. 3D MOUSE-TRACKING TILT (Global Card Support) ───────
   const tiltCards = document.querySelectorAll('.pillar, .svc-card:not(.blog-card), .iso-card, .bento-card, .glass-card:not(.blog-card)');
-  tiltCards.forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const cx   = rect.left + rect.width  / 2;
-      const cy   = rect.top  + rect.height / 2;
-      const dx   = (e.clientX - cx) / (rect.width  / 2);
-      const dy   = (e.clientY - cy) / (rect.height / 2);
-      gsap.to(card, {
-        rotateX: -dy * 8,
-        rotateY:  dx * 8,
-        transformPerspective: 1000,
-        ease: 'power2.out',
-        duration: .4
+  const supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  
+  if (supportsHover) {
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const cx   = rect.left + rect.width  / 2;
+        const cy   = rect.top  + rect.height / 2;
+        const dx   = (e.clientX - cx) / (rect.width  / 2);
+        const dy   = (e.clientY - cy) / (rect.height / 2);
+        gsap.to(card, {
+          rotateX: -dy * 8,
+          rotateY:  dx * 8,
+          transformPerspective: 1000,
+          ease: 'power2.out',
+          duration: .4
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { rotateX: 0, rotateY: 0, duration: .8, ease: 'power3.out' });
       });
     });
-    card.addEventListener('mouseleave', () => {
-      gsap.to(card, { rotateX: 0, rotateY: 0, duration: .8, ease: 'power3.out' });
-    });
-  });
+  }
 
   // ── 5. SCROLL SECTION REVEALS ────────────────────────────
   gsap.utils.toArray('.reveal').forEach(el => {
@@ -160,17 +172,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── 9. ACTIVE NAV HIGHLIGHT ───────────────────────────────
+  // ── 9. ACTIVE NAV HIGHLIGHT (Global & TOC) ───────────────────
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav a');
+  const navLinks = document.querySelectorAll('header nav a');
+  const tocLinks = document.querySelectorAll('.toc-nav a');
+  
+  // Set first TOC link to active by default
+  if(tocLinks.length > 0) tocLinks[0].classList.add('active');
+
   ScrollTrigger.create({
     trigger: document.body,
     start: 'top top', end: 'bottom bottom',
     onUpdate: () => {
       sections.forEach(sec => {
         const t = sec.getBoundingClientRect().top;
-        if (t <= 120 && t > -sec.offsetHeight + 120) {
-          navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${sec.id}`));
+        if (t <= 180 && t > -sec.offsetHeight + 180) {
+          navLinks.forEach(a => {
+            if (a.getAttribute('href')?.includes(`#${sec.id}`)) {
+              a.classList.add('active');
+            } else if (a.getAttribute('href')?.startsWith('#')) {
+              a.classList.remove('active');
+            }
+          });
+          tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${sec.id}`));
         }
       });
     }
