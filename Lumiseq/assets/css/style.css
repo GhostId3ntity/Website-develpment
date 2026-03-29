@@ -1291,6 +1291,21 @@ body.mobile-nav-visible .nav-toggle span:nth-child(3) {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .process-steps::before {
+    top: 54px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, var(--border), transparent);
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
