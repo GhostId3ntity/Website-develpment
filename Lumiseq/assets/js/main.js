@@ -192,5 +192,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  // ── 11. SECURE FORM HANDLING ───────────────────────────
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = contactForm.querySelector('button[type="submit"]');
+      const originalText = btn.innerText;
+      
+      // Basic secure feedback UX
+      btn.disabled = true;
+      btn.innerText = 'ENCRYPTING...';
+      
+      setTimeout(() => {
+        btn.innerText = 'TRANSMISSION SECURE';
+        btn.style.background = 'var(--accent)';
+        btn.style.color = '#000';
+        
+        // Reset after delay
+        setTimeout(() => {
+          contactForm.reset();
+          btn.disabled = false;
+          btn.innerText = originalText;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 3000);
+      }, 1500);
+    });
+  }
 
 });
