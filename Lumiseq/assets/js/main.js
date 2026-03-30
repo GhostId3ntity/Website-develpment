@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Basic secure feedback UX
       btn.disabled = true;
-      btn.innerText = 'ENCRYPTING...';
+      btn.innerHTML = '<span class="dot"></span> SECURING TRANSMISSION...';
       
       setTimeout(() => {
         btn.innerText = 'TRANSMISSION SECURE';
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.style.background = '';
           btn.style.color = '';
         }, 3000);
-      }, 1500);
+      }, 1000);
     });
   }
 
